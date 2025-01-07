@@ -4,12 +4,12 @@ import { useState } from "react";
 export default function App() {
   return (
     <div className="App">
-      <Accordions />
+      <Accordion />
     </div>
   );
 }
 
-function Accordions() {
+function Accordion() {
   const faqs = [
     {
       title: "Where are these chairs assembled?",
@@ -27,13 +27,13 @@ function Accordions() {
   return (
     <div className="accordions-container">
       {faqs.map((faq, index) => (
-        <Accordion faq={faq} key={index} index={index} />
+        <AccordionElement faq={faq} key={index} index={index} />
       ))}
     </div>
   );
 }
 
-function Accordion({ faq, index }) {
+function AccordionElement({ faq, index }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
